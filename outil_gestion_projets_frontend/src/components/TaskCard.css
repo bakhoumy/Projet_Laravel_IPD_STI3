@@ -1,0 +1,132 @@
+/* src/components/TaskCard.css */
+
+.task-card {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+.task-card-footer {
+    font-size: 0.8rem;
+    color: #6c757d; /* text-secondary */
+}
+
+/* --- Avatar pour l'assigné --- */
+.assignee-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    background-color: #6c757d; /* Couleur par défaut */
+}
+
+/* --- Icônes de priorité (simulées) --- */
+.priority-icon {
+    font-size: 1.1rem;
+}
+.priority-high { color: #dc3545; } /* red */
+.priority-medium { color: #ffc107; } /* yellow */
+.priority-low { color: #0d6efd; } /* blue */
+
+
+/* --- Menu d'actions (Dropdown) --- */
+.task-actions-btn {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.task-card:hover .task-actions-btn {
+    opacity: 1;
+}
+
+/* --- Rendre l'avatar cliquable --- */
+.assignee-wrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.assignee-wrapper:hover {
+    transform: scale(1.1);
+}
+
+/* --- Avatar plus petit pour le menu déroulant --- */
+.assignee-avatar-small {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex; /* Important pour l'alignement avec le texte */
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7rem;
+    background-color: #6c757d;
+}
+
+/* --- Bouton pour afficher les commentaires --- */
+.comments-toggle-btn {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.comments-toggle-btn:hover {
+    color: #0d6efd !important; /* text-primary */
+}
+
+/* --- Conteneur pour la section des commentaires --- */
+.comments-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+    margin-top: 0;
+}
+
+.comments-section.visible {
+    max-height: 500px; /* Valeur suffisamment grande pour contenir les commentaires */
+    margin-top: 0.75rem; /* mt-3 */
+}
+
+.comment-item {
+    background-color: #f8f9fa; /* bg-light */
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    word-break: break-word; /* Pour les longs commentaires sans espaces */
+}
+
+/* Actions qui apparaissent au survol du commentaire */
+.comment-actions {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: none; /* Caché par défaut */
+    gap: 8px;
+    background: rgba(248, 249, 250, 0.8); /* bg-light avec transparence */
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.comment-item:hover .comment-actions {
+    display: flex; /* Visible au survol */
+}
+
+.comment-actions a {
+    cursor: pointer;
+    color: #6c757d; /* text-secondary */
+}
+.comment-actions a:hover {
+    color: #212529; /* text-dark */
+}
+
+/* Formulaire d'édition de commentaire */
+.comment-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

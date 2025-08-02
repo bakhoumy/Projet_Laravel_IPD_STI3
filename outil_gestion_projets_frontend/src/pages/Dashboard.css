@@ -1,0 +1,25 @@
+/* src/pages/Dashboard.css (ou dans index.css) */
+
+.project-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Style simple pour les avatars en pile */
+.avatar-stack .avatar {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-secondary-color);
+    border: 2px solid var(--bs-card-bg);
+    text-align: center;
+    line-height: 28px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}

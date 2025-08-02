@@ -1,0 +1,85 @@
+/* src/index.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+}
+
+/* Ajoute une transition douce lorsque la largeur de la barre change */
+.progress-bar {
+    transition: width 0.4s ease-in-out;
+}
+
+/* Crée une classe pour une barre de progression plus fine */
+.progress.progress-sm {
+    height: 6px;
+}
+
+/* Style pour les boutons du sélecteur de vue */
+.view-switcher .btn {
+    border-color: var(--bs-border-color);
+}
+.view-switcher .btn.active {
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+/* Style pour les éléments de la vue liste */
+.project-list-item {
+    transition: background-color 0.2s ease-in-out;
+}
+.project-list-item:hover {
+    background-color: var(--bs-light);
+}
+
+/* S'assure que la description dans la liste ne prend pas trop de place */
+.project-list-item .project-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Ajustez si nécessaire */
+}
+
+
+/* Pour Users */
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Style pour des onglets avec une bordure inférieure active, plus moderne */
+.nav-tabs-line {
+    border-bottom: 1px solid #dee2e6;
+}
+.nav-tabs-line .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Aligne la bordure avec la bordure principale */
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-tabs-line .nav-link:hover {
+    color: #0d6efd; /* Couleur primaire de Bootstrap */
+}
+
+.nav-tabs-line .nav-link.active {
+    border-bottom-color: #0d6efd;
+    color: #0d6efd;
+    font-weight: 500;
+}

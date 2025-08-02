@@ -1,0 +1,69 @@
+/* src/components/Sidebar.css */
+
+/* Style de base pour la sidebar pour assurer la cohérence */
+.sidebar {
+    width: 280px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000; /* Assure que la sidebar reste au-dessus du contenu */
+}
+
+/* Style général pour les liens de navigation */
+.sidebar .nav-link {
+    border-radius: 0.375rem; /* bootstrap's .rounded-3 */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-left: 3px solid transparent; /* Bordure pour l'état actif */
+}
+
+/* Effet au survol pour tous les liens */
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style pour le lien ACTIF principal */
+.sidebar .nav-pills .nav-link.active {
+    background-color: rgba(var(--bs-primary-rgb), 0.15); /* Fond légèrement coloré */
+    color: var(--bs-white);
+    border-left: 3px solid var(--bs-primary); /* Indicateur visuel fort et élégant */
+}
+.sidebar .nav-pills .nav-link.active i {
+    color: var(--bs-primary);
+}
+
+
+/* Style pour les sous-liens (menu admin) */
+.sidebar .sub-link {
+    font-size: 0.9rem;
+    padding-left: 2.5rem !important; /* Indentation plus marquée */
+}
+
+/* Style pour le sous-lien ACTIF */
+.sidebar .sub-link.active {
+    color: var(--bs-white) !important;
+    font-weight: bold;
+}
+.sidebar .sub-link.active, .sidebar .sub-link:hover {
+     background-color: transparent; /* Pas de fond pour les sous-liens */
+}
+
+/* Classe pour la rotation de l'icône chevron */
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Personnalisation du dropdown utilisateur */
+.user-dropdown .dropdown-toggle::after {
+    display: none; /* Cache le chevron par défaut de Bootstrap pour un look plus propre */
+}
+
+.user-dropdown .dropdown-item {
+    transition: background-color 0.2s ease-in-out;
+}
+.user-dropdown .dropdown-item i {
+    width: 20px; /* Aligne les icônes dans le dropdown */
+}
